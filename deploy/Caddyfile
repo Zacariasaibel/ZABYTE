@@ -1,0 +1,29 @@
+{$SITE_DOMAIN} {
+    encode zstd gzip
+    header X-Content-Type-Options nosniff
+    handle /api/* {
+        reverse_proxy api:8000
+    }
+    handle /api {
+        reverse_proxy api:8000
+    }
+    @admin path /admin /admin/*
+    handle @admin {
+        reverse_proxy api:8000
+    }
+    handle_path /static/* {
+        root * /srv/static
+        file_server
+    }
+    @spa path_regexp spa ^/(|produkte/[A-Za-z0-9_-]+/?|warenkorb/?|kasse/?|bestaetigung/?)$
+    handle @spa {
+        root * /srv/frontend
+        rewrite * /index.html
+        header Cache-Control no-store
+        file_server
+    }
+    handle {
+        root * /srv/frontend
+        file_server
+    }
+}

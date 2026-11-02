@@ -1,0 +1,73 @@
+<section class="catalog-section shell" aria-labelledby="catalog-title">
+  <div class="catalog-intro">
+    <h1 id="catalog-title">Zubehör für deinen Arbeitsplatz</h1>
+    <p>Tastaturen, Mäuse, Audio und Zubehör für deinen Schreibtisch.</p>
+  </div>
+  <form class="catalog-controls" aria-label="Katalog sortieren und filtern" (ngSubmit)="applyFilters()">
+    <label class="sort-control" for="catalog-sort">Sortieren nach
+      <select id="catalog-sort" name="sort" [ngModel]="sort" (ngModelChange)="sort = $event; applyFilters()">
+        <option value="name">Name A–Z</option><option value="price_asc">Preis aufsteigend</option><option value="price_desc">Preis absteigend</option>
+      </select>
+    </label>
+    <label class="availability-control"><input type="checkbox" name="available" [ngModel]="available" (ngModelChange)="available = $event; applyFilters()"> Nur verfügbare Artikel</label>
+  </form>
+  <div class="results-toolbar">
+    <h2>Produkte</h2>
+    @if (state().status === 'ready') {
+      <p class="result-count" role="status">{{ state().products.length }} {{ state().products.length === 1 ? 'Produkt' : 'Produkte' }}</p>
+    }
+    @if (search || category || sort !== 'name' || available) {
+      <div class="applied-filters">
+        @if (search) { <span>Suche: <strong>{{ search }}</strong></span> }
+        <button class="text-button reset-filters" type="button" (click)="resetFilters()">Filter zurücksetzen</button>
+      </div>
+    }
+  </div>
+  <div class="catalog-results" [attr.aria-busy]="state().status === 'loading'">
+    @if (state().status === 'loading') {
+      <p class="loading-message" role="status">Produkte werden geladen …</p>
+      <div class="product-grid" aria-hidden="true">
+        @for (placeholder of [1,2,3,4]; track placeholder) {
+          <div class="skeleton"><div></div><span></span><span></span></div>
+        }
+      </div>
+    } @else if (state().status === 'error') {
+      <div class="state-panel" role="alert">
+        <h3>Der Katalog ist gerade nicht erreichbar.</h3>
+        <p>Bitte versuche es gleich noch einmal.</p>
+        <button class="button primary" type="button" (click)="retryProducts()">Erneut versuchen</button>
+      </div>
+    } @else if (state().products.length === 0) {
+      <div class="state-panel">
+        <h3>Keine passenden Produkte gefunden.</h3>
+        <p>Ändere den Suchbegriff oder die Kategorie.</p>
+        <button class="button secondary" type="button" (click)="resetFilters()">Alle Produkte anzeigen</button>
+      </div>
+    } @else {
+      <div class="product-grid">
+        @for (product of state().products; track product.id) {
+          <article class="product-card">
+            <a class="product-link" [routerLink]="['/produkte', product.slug]"
+              [queryParams]="filtersQuery()">
+              <div class="product-image">
+                <app-product-image [product]="product" />
+                @if (product.stock === 0) { <span class="stock-badge">Ausverkauft</span> }
+              </div>
+              <div class="product-info">
+                <p class="product-category">{{ product.category.name }}</p>
+                <h3>{{ product.name }}</h3>
+                <p class="product-summary">{{ shortDescription(product.description) }}</p>
+                <p class="price">{{ product.price | currency:'EUR' }}</p>
+                <p class="availability" [class.sold-out]="product.stock === 0">
+                  <span class="stock-dot" aria-hidden="true"></span>
+                  {{ product.stock > 0 ? product.stock + ' auf Lager' : 'Derzeit nicht verfügbar' }}
+                </p>
+              </div>
+            </a>
+            <div class="card-actions"><button type="button" class="button primary add-to-cart" [disabled]="!cart.canAdd(product)" (click)="cart.add(product)" [attr.aria-label]="product.name + ' in den Warenkorb'">In den Warenkorb</button></div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>

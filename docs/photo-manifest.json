@@ -1,0 +1,200 @@
+{
+  "project": "ZABYTE",
+  "prepared_on": "2026-10-31",
+  "status": "Historical stock photographs, replaced by the generated studio assets. These are not current main catalog images.",
+  "important": "Current presentation is defined in catalog/demo_presentation.py; original API image paths and product slugs remain stable. keyboard-white.jpg is not assigned because the keyboard is incomplete in the frame.",
+  "processing": "JPEG files resized/compressed by the source CDN. No local crop, background replacement, logo removal or creative retouch was applied.",
+  "files": [
+    {
+      "file": "frontend/public/assets/photos/cable-usbc.jpg",
+      "public_url": "/assets/photos/cable-usbc.jpg",
+      "candidate_api_image": "/assets/products/cable.svg",
+      "category": "cable",
+      "author": "Marcus Urbenz",
+      "source_page": "https://unsplash.com/photos/white-usb-cable-on-white-surface-4xMAiJZPQXI",
+      "license_url": "https://unsplash.com/license",
+      "download_url": "https://images.unsplash.com/photo-1619459072761-496c0812331b?auto=format&fit=max&fm=jpg&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 667,
+      "bytes": 38759,
+      "sha256": "037a07985fc835e3a04c1cce4bca5d02ae9ef1a458deb73d444ebed2fa7e26ce",
+      "visual_notes": "Primer plano de un conector USB-C. No acredita la longitud del cable, el conector del otro extremo, la potencia de carga ni la velocidad de datos.",
+      "status": "integrated",
+      "used_in_products": [
+        "strom-usb-c"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/deskmat.jpg",
+      "public_url": "/assets/photos/deskmat.jpg",
+      "candidate_api_image": "/assets/products/deskmat.svg",
+      "category": "deskmat",
+      "author": "Minh Phuc",
+      "source_page": "https://www.pexels.com/photo/a-keyboard-and-mouse-on-a-desk-with-a-map-27559488/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/27559488/pexels-photo-27559488.jpeg?auto=compress&cs=tinysrgb&w=800&q=75",
+      "width_px": 800,
+      "height_px": 1200,
+      "bytes": 140258,
+      "sha256": "09d22b3b17990a7267a360689ad01058fbadfaa8394897f549291445c2fce923",
+      "visual_notes": "Alfombrilla amplia negra con dibujo topográfico, teclado y ratón. No usar si la ficha promete otro acabado específico.",
+      "status": "integrated",
+      "used_in_products": [
+        "wolke-deskmat"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/headphones.jpg",
+      "public_url": "/assets/photos/headphones.jpg",
+      "candidate_api_image": "/assets/products/headphones.svg",
+      "category": "headphones",
+      "author": "Sound On",
+      "source_page": "https://www.pexels.com/photo/white-headset-on-white-background-3394648/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/3394648/pexels-photo-3394648.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 1000,
+      "bytes": 12405,
+      "sha256": "48891c734df585a5b33356b64eb60775617491ed670e72924eed97dc771c4401",
+      "visual_notes": "Auriculares claros sobre fondo blanco. La fotografía no acredita Bluetooth, autonomía, micrófono ni cancelación de ruido.",
+      "status": "integrated",
+      "used_in_products": [
+        "klang-headset"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/hub.jpg",
+      "public_url": "/assets/photos/hub.jpg",
+      "candidate_api_image": "/assets/products/hub.svg",
+      "category": "hub",
+      "author": "Gül Işık",
+      "source_page": "https://www.pexels.com/photo/laptop-and-usb-hub-on-table-5576311/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/5576311/pexels-photo-5576311.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 662,
+      "bytes": 40930,
+      "sha256": "c7d94dc993d2ce13c8df62816ff47194f3739ed36d388c57a2795a135ec50598",
+      "visual_notes": "Hub con marca Kingston Nucleum visible, conectado a un portátil. No atribuir puertos ni prestaciones sin verificar la ficha.",
+      "status": "integrated",
+      "used_in_products": [
+        "hafen-hub"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/keyboard-white.jpg",
+      "public_url": "/assets/photos/keyboard-white.jpg",
+      "candidate_api_image": "/assets/products/keyboard.svg",
+      "category": "keyboard",
+      "author": "Adrian Regeci",
+      "source_page": "https://www.pexels.com/photo/minimalist-workspace-keyboard-and-mouse-setup-28396251/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/28396251/pexels-photo-28396251.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 1250,
+      "bytes": 56128,
+      "sha256": "29e00dfc2ac154d3b27629859ad7d23ddf7b20ef36dde627862744299772db30",
+      "visual_notes": "Escena blanca con parte de un teclado, un ratón y un lápiz. No utilizada en ZABYTE porque el teclado está incompleto en el encuadre.",
+      "status": "not_used_incomplete_keyboard_view",
+      "used_in_products": []
+    },
+    {
+      "file": "frontend/public/assets/photos/keyboard-wired.jpg",
+      "public_url": "/assets/photos/keyboard-wired.jpg",
+      "candidate_api_image": "/assets/products/keyboard.svg",
+      "category": "keyboard",
+      "author": "Matheus Bertelli",
+      "source_page": "https://www.pexels.com/photo/computer-keyboard-with-a-cable-on-a-plain-background-20509998/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/20509998/pexels-photo-20509998.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 1500,
+      "bytes": 69978,
+      "sha256": "61b1337ed70c9ea458dc2b70622e0fb6fbbc61e22a5a5733791ea8bfc14c6047",
+      "visual_notes": "Teclado negro completo con cable y marca Acer visible. Comprobar distribución y tipo de conexión frente al texto del producto. Composición vertical.",
+      "status": "integrated",
+      "used_in_products": [
+        "fjord-keys",
+        "fjord-keys-mini"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/lamp.jpg",
+      "public_url": "/assets/photos/lamp.jpg",
+      "candidate_api_image": "/assets/products/lamp.svg",
+      "category": "lamp",
+      "author": "Prem Singh Tanwar",
+      "source_page": "https://www.pexels.com/photo/black-desk-lamp-on-white-wall-8263858/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/8263858/pexels-photo-8263858.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 667,
+      "bytes": 20088,
+      "sha256": "b6d1d315fb91b0c5724c28a31e436343b642e8870b8616dc3f7462f68de27315",
+      "visual_notes": "Lámpara articulada negra con detalles dorados. La imagen no acredita regulación LED, temperatura de color ni otras prestaciones.",
+      "status": "integrated",
+      "used_in_products": [
+        "nordlicht-lamp"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/mouse-wired.jpg",
+      "public_url": "/assets/photos/mouse-wired.jpg",
+      "candidate_api_image": "/assets/products/mouse.svg",
+      "category": "mouse",
+      "author": "Matheus Bertelli",
+      "source_page": "https://www.pexels.com/photo/mouse-in-a-studio-20510002/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/20510002/pexels-photo-20510002.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 669,
+      "bytes": 24015,
+      "sha256": "7c51ff9c926181c0ecdb8e8238921656c6ed5d87bddb23947958f7c11489d630",
+      "visual_notes": "Ratón negro Acer con cable USB visible. No usar para una ficha que afirme conexión inalámbrica.",
+      "status": "integrated",
+      "used_in_products": [
+        "polar-mouse"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/speaker.jpg",
+      "public_url": "/assets/photos/speaker.jpg",
+      "candidate_api_image": "/assets/products/speaker.svg",
+      "category": "speaker",
+      "author": "Caleb Oquendo",
+      "source_page": "https://www.pexels.com/photo/speaker-in-white-background-7772558/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/7772558/pexels-photo-7772558.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 667,
+      "bytes": 32827,
+      "sha256": "90850cbe79518a1d736abbbee85c2204e1e5e8ceebcf56d72858f0fe4eff7b58",
+      "visual_notes": "Altavoz portátil oscuro sobre fondo claro. No acredita potencia, resistencia al agua ni otros datos técnicos.",
+      "status": "integrated",
+      "used_in_products": [
+        "klang-speaker"
+      ]
+    },
+    {
+      "file": "frontend/public/assets/photos/stand.jpg",
+      "public_url": "/assets/photos/stand.jpg",
+      "candidate_api_image": "/assets/products/stand.svg",
+      "category": "stand",
+      "author": "Anete Lusina",
+      "source_page": "https://www.pexels.com/photo/modern-laptop-placed-on-stand-on-desk-4792717/",
+      "license_url": "https://www.pexels.com/license/",
+      "download_url": "https://images.pexels.com/photos/4792717/pexels-photo-4792717.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80",
+      "width_px": 1000,
+      "height_px": 668,
+      "bytes": 64383,
+      "sha256": "06049f641c5f7bf7a89451b302f253b3caf16d5d037f22dd4fb16c9be1ed24d4",
+      "visual_notes": "Soporte metálico de portátil mostrado en uso. El portátil no es el artículo de la ficha.",
+      "status": "integrated",
+      "used_in_products": [
+        "weitsicht-stand"
+      ]
+    }
+  ],
+  "historical": true,
+  "superseded_by": "studio-assets.json"
+}

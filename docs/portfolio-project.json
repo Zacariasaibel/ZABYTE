@@ -1,0 +1,46 @@
+{
+  "status": "draft_pending_public_urls",
+  "publishReady": false,
+  "portfolioRoot": "C:/Users/UserS2025/Desktop/Portfolio projects/Portfolio-Redesign",
+  "sharedDataFile": "src/data/projects.ts",
+  "project": {
+    "slug": "zabyte",
+    "name": "ZABYTE",
+    "category": "Fullstack-Projekt · Bestellsimulation",
+    "summary": "Computerzubehör suchen, Produkte ansehen, einen Warenkorb verwalten und eine Bestellung serverseitig simulieren.",
+    "goal": "Den vollständigen Ablauf vom Produktkatalog bis zur bestätigten Bestellsimulation mit einer gemeinsamen API und nachvollziehbaren Prüfungen umsetzen.",
+    "features": [
+      "Zehn Produkte mit Detailseiten, Bildern, Preisen und Verfügbarkeit ansehen",
+      "Suche, Kategorie, Preis- oder Namenssortierung und Verfügbarkeit kombinieren; Filter in der URL behalten",
+      "Artikel in den Warenkorb legen, Mengen ändern und die Auswahl nach dem Neuladen wiederfinden",
+      "Eine Bestellung ohne Zahlungs- oder Personendaten simulieren und die bestätigte Zusammenfassung ansehen",
+      "Produkte und Kategorien im geschützten Django Admin verwalten und simulierte Bestellungen prüfen"
+    ],
+    "technologies": ["Angular", "TypeScript", "CSS", "Python", "Django REST Framework", "SQLite"],
+    "implementation": "Angular lädt Katalog und Preise über das Django-API. Im Browser bleiben nur Produkt-IDs und Mengen gespeichert; Summen werden in ganzen Cent berechnet. Django prüft aktive Produkte, ganzzahlige Mengen und Bestand und berechnet Preise mit Decimal aus der Datenbank. Bestellung und Positionen werden gemeinsam in einer Transaktion als Snapshots in SQLite gespeichert. Eine vor dem Senden gesicherte eindeutige Anfragekennung verhindert doppelte Bestellungen bei Wiederholungen. Die Simulation verändert keine Bestände. Der vollständige E2E-Test prüft den Ablauf einschließlich Fehlerfällen, Navigation, Bildern und Tastaturfokus in vier Bildschirmgrößen.",
+    "repository": null,
+    "demo": null,
+    "note": "Portfolio-Projekt mit fiktiven Produkten und KI-generierten Produktdarstellungen. Bestellungen werden nur simuliert; es gibt keine echten Zahlungen oder Lieferungen.",
+    "images": [
+      { "src": "/images/projects/zabyte-katalog-desktop.png", "alt": "ZABYTE-Katalog mit zehn Artikeln, Kategorien, Sortierung und Verfügbarkeitsfilter", "width": 1425, "height": 1942 },
+      { "src": "/images/projects/zabyte-produktdetail-desktop.png", "alt": "Produktdetail einer USB-Maus mit Bild, Preis, Bestand und Mengenauswahl", "width": 1440, "height": 950 },
+      { "src": "/images/projects/zabyte-warenkorb-desktop.png", "alt": "Warenkorb mit drei USB-Mäusen, Mengensteuerung und Gesamtsumme", "width": 1440, "height": 950 },
+      { "src": "/images/projects/zabyte-bestaetigung-mobil.png", "alt": "Bestätigte Bestellsimulation mit Referenz, Artikel und Gesamtsumme auf einem Smartphone", "width": 320, "height": 879 },
+      { "src": "/images/projects/zabyte-katalog-mobil.png", "alt": "ZABYTE-Katalog auf einem 320 Pixel breiten Bildschirm", "width": 320, "height": 2422 }
+    ]
+  },
+  "screenshots": [
+    { "source": "docs/screenshots/katalog-desktop.png", "target": "public/images/projects/zabyte-katalog-desktop.png", "bytes": 443947 },
+    { "source": "docs/screenshots/produktdetail-desktop.png", "target": "public/images/projects/zabyte-produktdetail-desktop.png", "bytes": 175622 },
+    { "source": "docs/screenshots/warenkorb-desktop.png", "target": "public/images/projects/zabyte-warenkorb-desktop.png", "bytes": 46689 },
+    { "source": "docs/screenshots/bestaetigung-mobil.png", "target": "public/images/projects/zabyte-bestaetigung-mobil.png", "bytes": 29400 },
+    { "source": "docs/screenshots/katalog-mobil.png", "target": "public/images/projects/zabyte-katalog-mobil.png", "bytes": 175434 }
+  ],
+  "verification": {
+    "localBuild": "passed: confirmed by user in PowerShell",
+    "fullE2E": "passed: confirmed by user at 1440, 800, 390 and 320 px",
+    "backendTests": "34 passed previously; not repeated for documentation",
+    "screenshots": "five real captures visually reviewed and losslessly optimized",
+    "production": "not deployed; host, domain, credentials, container and HTTPS checks pending"
+  }
+}

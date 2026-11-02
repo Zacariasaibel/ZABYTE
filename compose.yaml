@@ -1,0 +1,50 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: deploy/api.Dockerfile
+    restart: unless-stopped
+    environment:
+      DJANGO_SETTINGS_MODULE: config.production
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Set a private secret in .env}
+      DJANGO_ALLOWED_HOSTS: ${SITE_DOMAIN:?Set the real domain in .env}
+      DJANGO_CSRF_TRUSTED_ORIGINS: https://${SITE_DOMAIN}
+      DJANGO_DB_PATH: ${DJANGO_DB_PATH:-/data/db.sqlite3}
+      DJANGO_BACKUP_DIR: /data/backups
+      DJANGO_STATIC_ROOT: /static
+      DJANGO_HSTS_INCLUDE_SUBDOMAINS: ${DJANGO_HSTS_INCLUDE_SUBDOMAINS:-0}
+      DJANGO_HSTS_PRELOAD: ${DJANGO_HSTS_PRELOAD:-0}
+    volumes:
+      - database:/data
+      - admin_static:/static
+    networks:
+      - internal
+  web:
+    build:
+      context: .
+      dockerfile: deploy/web.Dockerfile
+    restart: unless-stopped
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:?Set the real domain in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - admin_static:/srv/static:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - internal
+      - public
+    depends_on:
+      - api
+networks:
+  internal:
+    internal: true
+  public:
+volumes:
+  database:
+  admin_static:
+  caddy_data:
+  caddy_config:
