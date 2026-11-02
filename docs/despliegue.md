@@ -1,5 +1,7 @@
 # Despliegue V1: Docker Compose, un mismo origen
 
+El destino actual elegido es la cuenta gratuita PythonAnywhere Zaibel. Su procedimiento específico está en [pythonanywhere.md](pythonanywhere.md), sin Docker/Caddy/Waitress. Este documento conserva la alternativa Docker existente; no mezclar perfiles, mapeos ni comandos entre ambos destinos. El repositorio público confirmado es https://github.com/Zacariasaibel/ZABYTE.git. La tienda pública todavía no está verificada.
+
 Procedimiento preparado, **no desplegado ni validado en contenedores aquí**. Pendiente elegir host Linux con Docker Engine/Compose v2, DNS propio, almacenamiento persistente, copias externas y puertos 80/443 accesibles. Comandos PowerShell en la raíz; necesitan Docker disponible y acceso al host autorizado por su propietario. No se ha contratado alojamiento ni creado cuentas.
 
 El build Angular y E2E completos del usuario ya pasaron localmente. No es necesario repetirlos por esta revisión documental; las pruebas contra el dominio público serán una comprobación distinta. En un clon nuevo, preparar Python/.venv según inicio-local.md antes de usar las utilidades locales. Los comandos con bind mounts deben ejecutarse donde el daemon Docker pueda ver la ruta de origen. Con un contexto Docker remoto, una ruta de este portátil no se transfiere automáticamente: copiar primero proyecto/base al host autorizado y usar su ruta real. No se instala Docker en el portátil ni se ejecuta aquí este procedimiento.

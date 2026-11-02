@@ -1,0 +1,9 @@
+{
+  "DJANGO_SECRET_KEY": "GENERATE_ON_SERVER_DO_NOT_USE_THIS_PLACEHOLDER",
+  "DJANGO_ALLOWED_HOSTS": "zaibel.pythonanywhere.com",
+  "DJANGO_CSRF_TRUSTED_ORIGINS": "https://zaibel.pythonanywhere.com",
+  "DJANGO_DB_PATH": "/home/Zaibel/zabyte-data/db.sqlite3",
+  "DJANGO_STATIC_ROOT": "/home/Zaibel/zabyte-static",
+  "DJANGO_BACKUP_DIR": "/home/Zaibel/zabyte-data/backups",
+  "ZABYTE_FRONTEND_ROOT": "/home/Zaibel/zabyte-web"
+}

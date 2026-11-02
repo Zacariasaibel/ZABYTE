@@ -2,7 +2,7 @@
 
 ## Textos en alemán para tarjeta y detalle
 
-La fuente única del borrador es [portfolio-project.json](portfolio-project.json), objeto project. Usa los nombres reales del tipo Project del portfolio Astro: slug, name, category, summary, goal, features, technologies, implementation, repository, demo, note e images. No es un objeto listo para importar mientras repository/demo sigan null.
+La fuente única del borrador es [portfolio-project.json](portfolio-project.json), objeto project. Usa los nombres reales del tipo Project del portfolio Astro: slug, name, category, summary, goal, features, technologies, implementation, repository, demo, note e images. El repositorio público confirmado ya es https://github.com/Zacariasaibel/ZABYTE. demo sigue null hasta comprobar la tienda; plannedDemoUrl solo registra el destino previsto, no es un enlace operativo para la interfaz.
 
 **Name:** ZABYTE
 
@@ -41,7 +41,7 @@ El proyecto no existe en C:\Users\UserS2025\Desktop\Portfolio-Redesign. La carpe
 - src/pages/projekte/[slug].astro genera las rutas con getStaticPaths desde ese mismo array.
 - src/layouts/ProjectLayout.astro consume goal, features, implementation, note y la galería; el enlace repository es obligatorio y demo es opcional.
 
-Por eso no se añade todavía una tarjeta: repository null rompería el contrato o generaría un enlace inválido. No se modifica Astro, sus estilos, GitHub Pages ni los proyectos existentes; tampoco se ejecuta su build sin cambios.
+El repositorio ya está disponible, pero la integración definitiva se aplaza hasta verificar el alojamiento, como pide este bloque. No copiar demo null al array TypeScript; ese campo se omite o se completa con una URL operativa comprobada. No se modifica Astro, sus estilos, GitHub Pages ni los proyectos existentes; tampoco se ejecuta su build sin cambios.
 
 ## Cambios exactos cuando existan URLs reales
 
@@ -51,4 +51,4 @@ Por eso no se añade todavía una tarjeta: repository null rompería el contrato
 4. La ruta /projekte/zabyte/ y las tarjetas surgirán de las plantillas compartidas. Revisar miniatura, galería, textos alternativos, navegación y enlaces reales. No cambiar ProjectLayout.astro ni Projects.astro por preferencia.
 5. En PowerShell dentro del portfolio: npm.cmd run build y git diff --check. Comprobar localmente el resultado antes de que el usuario cree commit/push y publique.
 
-Repositorio y demo siguen pendientes; publishReady permanece false por la fase pública no verificada, no por fallos del E2E local. No se crea ni publica ningún repositorio remoto. Estos cambios se aplicarán al portfolio solo después de completar las URLs y validación de producción.
+Repositorio confirmado, commit inicial 831813f en main. Destino previsto: cuenta Zaibel, dominio zaibel.pythonanywhere.com, todavía sin validación pública. publishReady permanece false por esa fase pendiente, no por fallos del E2E local. La preparación de PythonAnywhere está en pythonanywhere.md. No usar el panel de la cuenta como demo ni integrar definitivamente Astro antes de comprobar HTTPS y el recorrido público.

@@ -1,6 +1,6 @@
 # Primer commit de ZABYTE V1
 
-Repositorio propio inicializado en ECommerceShop, rama main. No hay staging, commits, remotos, push ni publicacion. No se modifico el repositorio del portfolio ni ninguna carpeta superior.
+La V1 inicial ya fue publicada por el usuario en https://github.com/Zacariasaibel/ZABYTE.git, rama main, commit 831813f. El inventario y los comandos del primer commit que siguen se conservan como historial. La adaptación PythonAnywhere actual está sin staging/commit/push por parte del agente; su guía contiene los pasos manuales para publicar solo estos cambios. No se modificó el portfolio ni ninguna carpeta superior.
 
 ## Textos revisados por el comprobador
 
@@ -58,6 +58,19 @@ docs/verificacion-v1.md
 docs/portfolio.md
 docs/portfolio-project.json
 docs/commit-v1.md
+frontend/angular.json
+backend/catalog/test_pythonanywhere.py
+backend/config/pythonanywhere.py
+backend/config/pythonanywhere_environment.py
+backend/config/pythonanywhere_urls.py
+deploy/pythonanywhere-environment.example.json
+deploy/pythonanywhere_wsgi.py
+docs/pythonanywhere.md
+scripts/build-pythonanywhere.py
+scripts/check-pythonanywhere.py
+scripts/create-pythonanywhere-config.py
+scripts/package-pythonanywhere.py
+scripts/pythonanywhere.py
 ```
 
 ## Inventario completo del primer commit

@@ -1,5 +1,6 @@
 {
-  "status": "draft_pending_public_urls",
+  "status": "draft_pending_verified_demo",
+  "plannedDemoUrl": "https://zaibel.pythonanywhere.com",
   "publishReady": false,
   "portfolioRoot": "C:/Users/UserS2025/Desktop/Portfolio projects/Portfolio-Redesign",
   "sharedDataFile": "src/data/projects.ts",
@@ -18,7 +19,7 @@
     ],
     "technologies": ["Angular", "TypeScript", "CSS", "Python", "Django REST Framework", "SQLite"],
     "implementation": "Angular lädt Katalog und Preise über das Django-API. Im Browser bleiben nur Produkt-IDs und Mengen gespeichert; Summen werden in ganzen Cent berechnet. Django prüft aktive Produkte, ganzzahlige Mengen und Bestand und berechnet Preise mit Decimal aus der Datenbank. Bestellung und Positionen werden gemeinsam in einer Transaktion als Snapshots in SQLite gespeichert. Eine vor dem Senden gesicherte eindeutige Anfragekennung verhindert doppelte Bestellungen bei Wiederholungen. Die Simulation verändert keine Bestände. Der vollständige E2E-Test prüft den Ablauf einschließlich Fehlerfällen, Navigation, Bildern und Tastaturfokus in vier Bildschirmgrößen.",
-    "repository": null,
+    "repository": "https://github.com/Zacariasaibel/ZABYTE",
     "demo": null,
     "note": "Portfolio-Projekt mit fiktiven Produkten und KI-generierten Produktdarstellungen. Bestellungen werden nur simuliert; es gibt keine echten Zahlungen oder Lieferungen.",
     "images": [
@@ -41,6 +42,6 @@
     "fullE2E": "passed: confirmed by user at 1440, 800, 390 and 320 px",
     "backendTests": "34 passed previously; not repeated for documentation",
     "screenshots": "five real captures visually reviewed and losslessly optimized",
-    "production": "not deployed; host, domain, credentials, container and HTTPS checks pending"
+    "production": "PythonAnywhere Zaibel prepared locally; hosting build blocked by spawn EPERM; no new ZIP or verified public demo. Docker remains an alternative."
   }
 }

@@ -1,5 +1,15 @@
 # Verificación vigente de ZABYTE V1
 
+## Adaptación PythonAnywhere, 2 de noviembre de 2026
+
+Base confirmada: repositorio público https://github.com/Zacariasaibel/ZABYTE.git, main, commit 831813f; árbol local inicialmente limpio. Perfil específico añadido sin modificar el perfil local ni Docker. Rutas previstas bajo /home/Zaibel, secreto privado compartido por WSGI/comandos, URLs SPA acotadas y build separado con deployUrl /shop-static/.
+
+Comprobado localmente: cargador privado repetible, rechazo de rutas públicas para secretos/datos, configuración DEBUG=False/cookies seguras, ausencia de doble redirección Django, tres pruebas de rutas/404 y preservación de API/Admin. Con el perfil real se probó CSRF sobre HTTPS simulado: cookie Secure/HttpOnly, rechazo sin token y con Origin ajeno, aceptación de CSRF válido hasta la validación del cuerpo (400 esperado, sin crear pedido). Empaquetador validado con un build sintético: rutas de index, ZIP público, rechazo de secretos/fuentes/SQLite/build antiguo. No se presenta ese ZIP de prueba como frontend real. La prueba de compatibilidad de config.production existente sigue pasando. Sintaxis, enlaces, coincidencia literal WSGI/guía y comprobación de 64 archivos correctas. check --deploy específico: sin errores, con W005, W008 y W021; W008 exige Force HTTPS de la plataforma, no se oculta.
+
+El intento inicial de ejecutar un .ps1 encontró la política de scripts del portátil; se sustituyó el orquestador por Python estándar sin modificar esa política. El único build específico que llegó a Angular terminó en spawn EPERM de esbuild. El orquestador impidió empaquetar: **no hay ZIP nuevo generado para subir**. No se lanzó Chrome ni se repitió el E2E local ya superado, pues el cambio afecta al perfil de build y al servidor de despliegue.
+
+Pendiente en la cuenta: comprobar home real y Python 3.13 disponible para consola/web, publicar manualmente estos cambios, generar el ZIP en PowerShell normal, instalar requisitos, crear entorno privado, migrar/inicializar solo una base nueva, collectstatic, WSGI y mapeos, Force HTTPS, Reload y pruebas públicas. No se cambiaron cuenta ni datos locales; no hay tienda pública verificada. Guía completa: [pythonanywhere.md](pythonanywhere.md). Las referencias siguientes a proveedor aún sin elegir describen el cierre previo: ahora PythonAnywhere es el destino previsto y Docker queda como alternativa.
+
 ## Estado local confirmado
 
 El usuario ejecutó correctamente, en PowerShell normal, el build y el E2E completo del estado actual:
