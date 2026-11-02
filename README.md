@@ -1,15 +1,27 @@
 # ZABYTE
 
-ZABYTE ist ein Onlineshop für Computerzubehör, den ich im Rahmen meiner Umschulung als Fullstack-Projekt für mein Portfolio entwickle. Produkte, Warenkorb und Bestellablauf sind miteinander verbunden. Die Produkte sind fiktiv. Bestellungen werden simuliert; es gibt keine echten Zahlungen oder Lieferungen.
+Fullstack-Shop für Computerzubehör mit Angular, TypeScript, Django REST Framework und SQLite.
 
-Im Katalog kannst du zehn Artikel ansehen, nach Namen suchen und Kategorien auswählen. Dazu kommen die Sortierung nach Name oder Preis und ein Filter für verfügbare Artikel. Die Auswahl bleibt in der URL erhalten. Produktkarten führen zur Detailseite mit Bild, Beschreibung, Preis und Bestand. Artikel lassen sich direkt oder mit einer gewählten Menge in den Warenkorb legen. Dort kannst du Mengen ändern und Artikel entfernen.
+[Shop öffnen](https://zaibel.pythonanywhere.com/) · [Code auf GitHub](https://github.com/Zacariasaibel/ZABYTE)
 
-Für die Oberfläche verwende ich Angular und TypeScript mit eigenständigen Komponenten und CSS. Python, Django und Django REST Framework stellen die API bereit. SQLite speichert Produkte, Kategorien und simulierte Bestellungen. Über den geschützten Django Admin lassen sich Katalogdaten verwalten und Bestellungen ansehen.
+## Ausprobieren
 
-Django prüft beim Bestätigen, ob Produkte aktiv und Mengen gültig und verfügbar sind. Preise und Gesamtsumme berechnet der Server aus der Datenbank. Angular rechnet mit ganzen Cent, Django mit Decimal. Die Simulation verändert keine Bestände. Der Browser speichert nur Produkt-IDs und Mengen in localStorage; aktuelle Preise werden erneut geladen. Eine gespeicherte Anfragekennung sorgt dafür, dass ein wiederholter Bestellversuch keinen zweiten Auftrag erzeugt. Bei einem Fehler bleibt der Warenkorb erhalten.
+Zehn Produkte ansehen, suchen, nach Kategorie oder Verfügbarkeit filtern und nach Preis oder Name sortieren. Produktdetails öffnen, Artikel in den Warenkorb legen und Mengen ändern. Der Warenkorb bleibt nach dem Neuladen erhalten.
 
-Der Angular-Build und der vollständige E2E-Test wurden lokal erfolgreich ausgeführt. Geprüft wurden unter anderem Katalog, Filter, Navigation, Warenkorb, Bestellsimulation, Fehlerfälle, Bilder und Tastaturfokus bei 1440, 800, 390 und 320 Pixeln. Auch Backend- und Warenkorbtests sind bestanden. Diese Ergebnisse bestätigen den lokalen Stand; der öffentliche Betrieb mit HTTPS ist noch nicht geprüft.
+Anschließend die Bestellung prüfen und simulieren. Der Server validiert Preise, Mengen und Bestand und bestätigt die Simulation mit einer Referenz. Eine wiederholte Anfrage erzeugt keine doppelte Bestellung. Die Bestände bleiben unverändert.
 
-Die [Start- und Testanleitung](docs/inicio-local.md) enthält die PowerShell-Befehle. Weitere Informationen stehen im [Prüfbericht](docs/verificacion-v1.md) und der [Architekturbeschreibung](docs/arquitectura-v1.md). Für PythonAnywhere sind ein eigenes Build-Profil und eine [Schritt-für-Schritt-Anleitung](docs/pythonanywhere.md) vorbereitet. Der neue Hosting-Build ist in Codex an einer Ausführungsbeschränkung gescheitert; ein Upload-Paket wurde hier nicht erzeugt. Die [Docker-Anleitung](docs/despliegue.md) bleibt als Alternative erhalten. Eine öffentliche Demo ist noch nicht bestätigt. [Screenshots und Portfolio-Texte](docs/portfolio.md) zeigen den lokalen Stand.
+Produkte und Produktbilder sind fiktiv. Die Bilder wurden mit KI generiert. Es gibt keine echten Zahlungen, Lieferungen oder Kundenkonten. Zum Testen sind keine Zahlungs- oder Personendaten erforderlich. Der Django Admin ist geschützt.
 
-Die Produktbilder stellen fiktive Artikel dar und wurden mit KI generiert. Herkunft und Zuordnung sind in den [Bildnachweisen](docs/imagenes-estudio-zabyte.md) dokumentiert.
+## Lokal starten
+
+Voraussetzungen: Python 3.13, Node 24 und npm. In einer virtuellen Umgebung `backend/requirements.txt` installieren, unter `frontend` die Pakete mit `npm.cmd ci` installieren. Einen privaten `DJANGO_SECRET_KEY` setzen, Migrationen ausführen und bei einer neuen Datenbank `seed_demo` aufrufen. Danach Django auf Port 8000 und Angular mit `npm.cmd start --prefix frontend` starten. Die Oberfläche läuft auf `http://127.0.0.1:4200/`.
+
+Die vollständigen PowerShell-Befehle und Hinweise zum Erhalt bestehender Daten stehen in der [lokalen Startanleitung](docs/inicio-local.md).
+
+## Prüfungen
+
+Die öffentliche HTTPS-Demo funktioniert. Die zehn Produkte und eine Bestellsimulation mit passender Referenz, korrekter Summe und geleertem Warenkorb wurden bereits geprüft. Die vollständige E2E-Suite lief lokal; sie wurde nicht vollständig gegen Produktion ausgeführt.
+
+Bei der aktuellen Überarbeitung wurden 37 Backend-Tests, die Warenkorb- und Filterprüfungen sowie der Angular-Build erneut ausgeführt. Die neue echte Katalogaufnahme ersetzt die Hauptaufnahme im Portfolio. Details und Abgrenzung der öffentlichen und lokalen Prüfungen stehen im [aktuellen Prüfbericht](docs/review-2026-11-02.md).
+
+[Architektur](docs/arquitectura-v1.md) · [PythonAnywhere](docs/pythonanywhere.md) · [Bildnachweise](docs/imagenes-estudio-zabyte.md)
