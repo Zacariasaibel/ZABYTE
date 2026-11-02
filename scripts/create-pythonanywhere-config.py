@@ -14,7 +14,7 @@ private = home / ".config/zabyte"
 private.mkdir(mode=0o700, parents=True, exist_ok=True)
 os.chmod(private, 0o700)
 target = private / "environment.json"
-with target.open("x", encoding="utf-8", opener=lambda path, flags: os.open(path, flags, 0o600)) as stream:
+with open(target, "x", encoding="utf-8", opener=lambda path, flags: os.open(path, flags, 0o600)) as stream:
     json.dump(values, stream, indent=2)
     stream.write("\n")
 for name, mode in [("zabyte-data", 0o700), ("zabyte-web", 0o755), ("zabyte-static", 0o755)]:
